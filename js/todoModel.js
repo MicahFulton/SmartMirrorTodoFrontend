@@ -17,7 +17,7 @@ var app = app || {};
 		this.key = key;
 		this.todos = [];
 		this.onChanges = [];
-		Utils.store(key).then(res => this.todos = res);
+		Utils.store(key).then(res => this.todos = res).then(() => this.inform());
 	};
 
 	app.TodoModel.prototype.subscribe = function (onChange) {
